@@ -24,11 +24,14 @@ public class player : MonoBehaviour
             {
                   gameObject.transform.position += new Vector3(velocidade * Time.deltaTime,0,0);
             }
-            
-             
+           
+        
+            }
     }
+             
+    
 
   
    
     
-}
+
