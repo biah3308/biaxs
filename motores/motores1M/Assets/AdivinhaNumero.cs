@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
@@ -6,29 +7,29 @@ using Random = System.Random;
 public class AdivinhaNumero : MonoBehaviour
 {
     public int numero;
-    
+
     private bool resposta;
 
     private int menor = 0;
     private int maior = 10;
     private int numeroDeTentativas = 10;
-    
+
     bool oJogoEstaRodando = true;
-    
+
     Random rand = new Random();
     private int sorteado;
-    
+
     void Start()
     {
-        sorteado = rand.Next(menor, maior+1);
-      
-        Debug.Log("Pensei em um número entre "+menor+ " e " + maior+", tente adivinhar.");
+        sorteado = rand.Next(menor, maior + 1);
+
+        Debug.Log("Pensei em um número entre " + menor + " e " + maior + ", tente adivinhar.");
     }
 
     void Update()
     {
         //testa o numero quando aparte a tecla de espaço
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Você tem " + numeroDeTentativas + " tentativas!");
             int numeroDigitaDo = numero;
@@ -50,15 +51,16 @@ public class AdivinhaNumero : MonoBehaviour
 
             if (numeroDeTentativas == 0)
             {
-                Debug.Log("Suas tentavivas acabanram. O número que pessei foi: "+sorteado);
+                Debug.Log("Suas tentavivas acabanram. O número que pessei foi: " + sorteado);
                 oJogoEstaRodando = false;
             }
-
         }
-        
-        
     }
-    
-    
-    
 }
+        
+        
+        
+    
+    
+    
+    
