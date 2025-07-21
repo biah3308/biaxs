@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     
+    
     public float velocidade = 40;
     public float forcaDoPulo = 4;
     
@@ -50,13 +51,14 @@ public class Player : MonoBehaviour
         animator.SetBool("Pulo",!noChao);
         
     }
-
-    void OnCollisionEnter2D(Collision2D colisao)
+    
+    
+    private void OnCollisionEnter2D(Collision2D colisao)
     {
         //if (colisao.gameObject.tag == "Chao")
         if(colisao.gameObject.CompareTag("Chao"))
         {
-            noChao = true;
+            noChao = false;
         }
     }
 
@@ -64,7 +66,7 @@ public class Player : MonoBehaviour
     {
         if(colisao.gameObject.CompareTag("Chao"))
         {
-            noChao = false;
+            noChao = true;
         }
     }
 }
